@@ -44,6 +44,8 @@ Asset conversion requires Numpy and PIL.
 
 ## Usage
 
+Download as ```.zip``` and put it all inside one folder, then run the ```pakc_modder.py``` from your command interpreter.
+
 pakc_modder.py [-h] [-k KEY] [-kf KEY_FILE] [-n {1,2,3,4,5}] input_file output_dir
 
 positional arguments:
