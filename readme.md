@@ -26,6 +26,10 @@ This tool is used to convert ```.adp``` files to ```.wav``` and back for easy as
 
 # Snakes (NGage) Asset Editing Tool
 
+[![Nokia logo edited](https://raw.githubusercontent.com/twarp-project-dump/Snakes-Ngage-Assets-Extraction/refs/heads/main/imgs/smileload.png)]
+[![Nokia logo edited](https://raw.githubusercontent.com/twarp-project-dump/Snakes-Ngage-Assets-Extraction/refs/heads/main/imgs/smilepick.png)]
+[![Nokia logo edited](https://raw.githubusercontent.com/twarp-project-dump/Snakes-Ngage-Assets-Extraction/refs/heads/main/imgs/smilemap.png)]
+
 This is an asset modding toolchain for Snakes (Snakes 3D, Snakes60), targeting ```v0.6.0.19 A3``` of the game.
 
 It uses various 3rd party tools (listed above) and custom scripts and programs to edit ```.pakc``` files used by the game to store its assets. The game was partially reverse-engineered to convert proprietary asset formats into common and easily editable ones, which are then repacked by the tool into ```.pakc``` files, allowing you to edit the sprites, audio, some of the 3d models, the levels and so on.
