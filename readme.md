@@ -48,9 +48,9 @@ Download as ```.zip``` and put it all inside one folder, then run the ```pakc_mo
 
 pakc_modder.py [-h] [-k KEY] [-kf KEY_FILE] [-n {1,2,3,4,5}] input_file output_dir
 
-positional arguments:
-  input_file            Path to the input .pakc file
-  output_dir            Directory for output files
+positional arguments:   
+  input_file            Path to the input .pakc file   
+  output_dir            Directory for output files   
 
 options:   
   -h, --help            show this help message and exit   
