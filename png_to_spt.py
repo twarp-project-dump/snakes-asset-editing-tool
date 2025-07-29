@@ -4,18 +4,18 @@ import os
 import argparse
 from collections import defaultdict
 
-def create_spt_file(output_path: str, images: list, palette_size: int = 256, x_offset = 0, y_offset = 0):
+def create_spt_file(output_path: str, images: list, palette_size: int = 255, x_offset = 0, y_offset = 0):
     """
     Create an .spt file from a list of PIL Images
     :param output_path: Path to save the .spt file
     :param images: List of PIL Images (must all be same size)
-    :param palette_size: Maximum number of colors to use (default 256)
+    :param palette_size: Maximum number of colors to use (default 255)
     """
     if not images:
         raise ValueError("No images provided")
     
-    if (palette_size > 256):
-        raise ValueError("Palette size cannot be bigger than 256 due to math reasons")
+    if (palette_size > 255):
+        raise ValueError("Palette size cannot be bigger than 255 due to math reasons")
 
     width, height = images[0].size
     for img in images:
@@ -36,7 +36,7 @@ def create_spt_file(output_path: str, images: list, palette_size: int = 256, x_o
     sorted_colors = sorted(color_counts.items(), key=lambda x: x[1], reverse=True)
 
     if len(sorted_colors) > palette_size:
-        print(f"Cutting down the pallette from {sorted_colors} colors to {palette_size} colors")
+        print(f"Cutting down the pallette from {len(sorted_colors)} colors to {palette_size} colors")
 
     palette = [color[0] for color in sorted_colors[:palette_size]]
     
@@ -175,7 +175,7 @@ def process_png_to_spt(input_path: str, output_dir: str):
                 # get the offsets encoded like "[[1;2]]" in the filename. they should be the same for the whole image group or it will split them in two and cause you issues
                 output_path = os.path.join(output_dir, base_name.split("[[")[0] + '.spt')
                 offsets = base_name.split("[[")[1].split("]]")[0].split(";")
-                create_spt_file(output_path, images, 256, int(offsets[0]), int(offsets[1]))
+                create_spt_file(output_path, images, 255, int(offsets[0]), int(offsets[1]))
                 
             
             print(f"Created {output_path} with {len(images)} images")
